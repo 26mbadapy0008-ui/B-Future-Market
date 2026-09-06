@@ -1,4 +1,4 @@
-# BHAVISHMART Premium Store
+# BHAVISHMART
 GitHub Pages-ready premium responsive storefront for bhavishmart.shop.
 
 Included:
