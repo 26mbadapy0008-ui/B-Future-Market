@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BHAVISHMART</title>
+<meta name="description" content="BHAVISHMART — good quality, good price.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">BHAVISHMART <span>Good Quality • Good Price</span><span>Free delivery on selected orders</span></div>
+<header class="header">
+  <a class="logo" href="#home">BHAVISH<span>MART</span></a>
+  <nav><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#deals">Deals</a><a href="#sell">Sell on BHAVISHMART</a></nav>
+  <div class="head-actions">
+    <button onclick="openSearch()">⌕ <span class="hide-sm">Search</span></button>
+    <button onclick="showLogin('customer')">♙ <span class="hide-sm">Account</span></button>
+    <button onclick="openWishlist()">♡</button>
+    <button onclick="openCart()">🛒 <b id="cartCount">0</b></button>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <div class="pill">BHAVISHMART SELECTED</div>
+    <h1>Premium shopping.<br><i>Fair prices.</i></h1>
+    <p>Discover carefully selected products where quality, value and customer experience come first.</p>
+    <div><a class="btn dark" href="#shop">Explore products</a><a class="btn light" href="#categories">Browse categories</a></div>
+    <div class="trust"><span>✓ Quality focused</span><span>✓ Secure checkout</span><span>✓ Easy returns</span></div>
+  </div>
+  <div class="hero-art"><div class="art-inner"><small>THE BHAVISHMART STANDARD</small><strong>QUALITY<br>FIRST</strong><span>Curated for everyday life</span></div></div>
+</section>
+
+<section id="categories" class="section">
+  <div class="section-title"><div><small>DISCOVER</small><h2>Shop by category</h2></div></div>
+  <div class="category-grid">
+    <button onclick="filterCategory('Fashion')"><span>01</span><b>Fashion</b><small>Clothing & footwear</small></button>
+    <button onclick="filterCategory('Electronics')"><span>02</span><b>Electronics</b><small>Smart everyday tech</small></button>
+    <button onclick="filterCategory('Home')"><span>03</span><b>Home</b><small>Useful home products</small></button>
+    <button onclick="filterCategory('Accessories')"><span>04</span><b>Accessories</b><small>Complete your look</small></button>
+  </div>
+</section>
+
+<section id="shop" class="section shop">
+  <div class="section-title shopbar">
+    <div><small>CURATED COLLECTION</small><h2>Featured products</h2></div>
+    <div class="tools"><select id="sort" onchange="sortProducts(this.value)"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select><input id="search" oninput="searchProducts(this.value)" placeholder="Search products"></div>
+  </div>
+  <div id="productGrid" class="products"></div>
+</section>
+
+<section id="deals" class="deal"><div><small>LIMITED COLLECTION</small><h2>Better value, without compromise.</h2><p>We compare quality and price before products are selected for BHAVISHMART.</p></div><a class="btn dark" href="#shop">Shop the collection</a></section>
+
+<section id="sell" class="seller-section">
+  <div class="section">
+    <small>SELLER ECOSYSTEM</small><h2>Build your business on BHAVISHMART.</h2>
+    <p class="lead">A future-ready seller dashboard for products, inventory, orders, payouts and marketplace operations.</p>
+    <div class="seller-grid">
+      <article><b>01</b><h3>Seller Login</h3><p>Manage your catalogue, prices, stock and orders.</p><button class="btn dark" onclick="showLogin('seller')">Seller login</button></article>
+      <article><b>02</b><h3>Multi-channel ready</h3><p>Designed for future Amazon, Flipkart, Myntra and other marketplace connections.</p></article>
+      <article><b>03</b><h3>Analytics</h3><p>Sales, profit, stock and product trend dashboards.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="payment-section">
+  <div class="section"><small>CHECKOUT</small><h2>Payment-ready architecture</h2>
+  <p>Common gateways can be connected securely from the backend. Never put secret payment keys in this frontend.</p>
+  <div class="payments"><span>Razorpay</span><span>Cashfree</span><span>PayU</span><span>Stripe</span><span>UPI</span><span>Cards</span><span>Net Banking</span><span>Wallets</span><span>COD</span></div>
+  </div>
+</section>
+
+<footer><div class="logo">BHAVISH<span>MART</span></div><p>Good Quality • Good Price</p><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a><a href="mailto:support@bhavishmart.shop">support@bhavishmart.shop</a></div><small>© 2026 BHAVISHMART</small></footer>
+
+<div id="overlay" onclick="closeAll()"></div>
+<div id="searchPanel" class="modal search-panel"><button class="x" onclick="closeSearch()">×</button><h2>Search BHAVISHMART</h2><input autofocus oninput="searchProducts(this.value)" placeholder="Search products..."></div>
+
+<aside id="cart"><div class="modal-head"><h2>Your cart</h2><button class="x" onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="total"><span>Total</span><strong>₹<span id="total">0</span></strong></div><button class="btn dark full" onclick="openCheckout()">Secure checkout</button></aside>
+
+<div id="loginModal" class="modal login"><button class="x" onclick="closeAll()">×</button><div class="login-tabs"><button id="customerTab" onclick="showLogin('customer')">Customer</button><button id="sellerTab" onclick="showLogin('seller')">Seller</button></div><h2 id="loginTitle">Customer Login</h2><p id="loginSub">Sign in to manage your orders and wishlist.</p><input placeholder="Email or mobile number"><input type="password" placeholder="Password"><button class="btn dark full" onclick="demoLogin()">Continue</button><p class="small">New here? Create an account in the next backend version.</p></div>
+
+<div id="checkoutModal" class="modal checkout-modal"><button class="x" onclick="closeAll()">×</button><h2>Secure checkout</h2><p>Choose a payment method. Live payment processing will be connected through the backend.</p><div class="pay-options"><button onclick="paymentDemo('UPI')">UPI</button><button onclick="paymentDemo('Card')">Credit / Debit Card</button><button onclick="paymentDemo('Net Banking')">Net Banking</button><button onclick="paymentDemo('Wallet')">Wallet</button><button onclick="paymentDemo('COD')">Cash on Delivery</button></div></div>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
