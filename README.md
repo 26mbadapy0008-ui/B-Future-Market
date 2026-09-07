@@ -1,22 +1,30 @@
-# BHAVISHMART
-GitHub Pages-ready premium responsive storefront for bhavishmart.shop.
+# BHAVISHMART — GitHub Pages + Supabase
 
-Included:
-- Mobile, tablet and laptop responsive layout
-- Customer login UI
-- Seller login UI
-- Product search, categories, sorting and cart
-- Checkout/payment-method UI
-- Payment architecture placeholders for Razorpay, Cashfree, PayU, Stripe, UPI, cards, net banking, wallets and COD
-- Future multi-marketplace section
+Marketplace-style BHAVISHMART storefront for `bhavishmart.shop`.
 
-Important: live payments, real authentication, orders, inventory, seller dashboard and marketplace APIs require a secure backend/database. Secret API keys must never be placed in frontend files.
+## Included
+- Responsive storefront for desktop, tablet and mobile
+- Product search, categories, deals and cart UI
+- Customer sign-up, sign-in and logout using Supabase Auth
+- Automatic `customers` record through the Supabase database trigger
+- Seller login placeholder (seller auth should be added separately)
+- CNAME for `bhavishmart.shop`
 
-Next recommended build:
-1. Backend + database
-2. Customer/seller authentication
-3. Real product images/catalogue
-4. Razorpay/Cashfree/PayU integration
-5. Orders, refunds and shipping
-6. Seller dashboard
-7. Amazon/Flipkart/Myntra integrations
+## Supabase connection
+The browser uses the Supabase **Project URL** and **Publishable key**. Publishable keys are intended for frontend use; never put a Secret/Service Role key in this repository.
+
+Project URL:
+`https://uijghkxiofripwggvztr.supabase.co`
+
+The Supabase project should keep Row Level Security enabled and use appropriate policies before production launch.
+
+## Important production work still needed
+- RLS policies for customer-owned data, orders, wishlist, reviews and seller/admin access
+- Secure server-side payment integration (Razorpay/Cashfree/PayU/etc.)
+- Order creation, inventory reservation and payment webhooks
+- Shipping, returns, refunds and notifications
+- Seller onboarding and seller authorization
+- Marketplace API integrations (Amazon/Flipkart/Myntra) where approved
+- Production email/SMTP configuration for branded account emails
+
+Do not store passwords, service-role keys, payment secrets or other private credentials in frontend files.
