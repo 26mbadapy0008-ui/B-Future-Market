@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BHAVISHMART - Good Quality, Good Price.">
+  <title>BHAVISHMART | Good Quality • Good Price</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement">
+    <span>BHAVISHMART • Good Quality • Good Price</span>
+    <span>Free delivery on selected orders</span>
+    <span>Sell on BHAVISHMART</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-main container">
+      <a class="brand" href="index.html" aria-label="BHAVISHMART home">
+        <span class="brand-mark">B</span>
+        <span>BHAVISH<span class="brand-light">MART</span></span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+
+      <div class="location">
+        <span class="icon">⌖</span>
+        <div><small>Deliver to</small><strong>India</strong></div>
+      </div>
+
+      <form class="search" id="searchForm">
+        <select id="categorySelect" aria-label="Search category">
+          <option value="All">All</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Home">Home</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+        <input id="searchInput" type="search" placeholder="Search products, brands and more..." autocomplete="off">
+        <button type="submit" aria-label="Search">⌕</button>
+      </form>
+
+      <div class="header-actions">
+        <button class="account-btn" data-login="customer"><span>♙</span><small>Hello, sign in</small><strong>Account</strong></button>
+        <button data-action="wishlist">♡ <span class="desktop-only">Wishlist</span></button>
+        <button data-action="cart">🛒 <span class="desktop-only">Cart</span><b class="count" id="cartCount">0</b></button>
+      </div>
+    </div>
+
+    <nav class="nav-bar">
+      <div class="container nav-inner">
+        <button class="all-categories" id="allCategoriesBtn">☰ All Categories</button>
+        <a href="#deals">Today's Deals</a>
+        <a href="#best">Best Sellers</a>
+        <a href="#new">New Arrivals</a>
+        <a href="#fashion">Fashion</a>
+        <a href="#electronics">Electronics</a>
+        <a href="#home-living">Home & Living</a>
+        <a href="#beauty">Beauty</a>
+        <a href="#seller">Sell on BHAVISHMART</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="hero-tag">BHAVISHMART SELECT</div>
+        <h1>Better choices.<br><span>Brighter shopping.</span></h1>
+        <p>Quality products, smart prices and a shopping experience built for the future.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#shop">Shop now →</a>
+          <a class="btn btn-secondary" href="#why">Why Bhavishmart?</a>
+        </div>
+        <div class="hero-trust"><span>✓ Quality focused</span><span>✓ Secure payments</span><span>✓ Easy returns</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit"></div>
+        <div class="hero-product">✦</div>
+        <div class="hero-card-text"><small>THE BHAVISHMART STANDARD</small><strong>GOOD<br>QUALITY</strong><span>Fair prices. Every day.</span></div>
+      </div>
+    </section>
+
+    <section class="container section" id="categories">
+      <div class="section-heading"><div><small>EXPLORE</small><h2>Shop by category</h2></div><a href="#shop">View all →</a></div>
+      <div class="category-grid">
+        <button data-category="Fashion"><span>👕</span><b>Fashion</b><small>Clothing & footwear</small></button>
+        <button data-category="Electronics"><span>🎧</span><b>Electronics</b><small>Smart everyday tech</small></button>
+        <button data-category="Home"><span>🛋️</span><b>Home & Living</b><small>Make your space better</small></button>
+        <button data-category="Accessories"><span>⌚</span><b>Accessories</b><small>Complete your look</small></button>
+        <button data-category="Beauty"><span>✨</span><b>Beauty</b><small>Personal care</small></button>
+        <button data-category="Sports"><span>🏃</span><b>Sports</b><small>Move & perform</small></button>
+      </div>
+    </section>
+
+    <section class="promo-strip container">
+      <article class="promo promo-one"><small>FASHION EDIT</small><h3>Style that fits<br>your budget.</h3><button data-category="Fashion">Shop Fashion →</button></article>
+      <article class="promo promo-two"><small>TECH ZONE</small><h3>Smart tech.<br>Smarter prices.</h3><button data-category="Electronics">Explore Tech →</button></article>
+      <article class="promo promo-three"><small>HOME ESSENTIALS</small><h3>Make home<br>feel better.</h3><button data-category="Home">Shop Home →</button></article>
+    </section>
+
+    <section class="section deals" id="deals">
+      <div class="container">
+        <div class="section-heading"><div><small>LIMITED-TIME VALUE</small><h2>⚡ Flash Deals</h2></div><div class="timer">Ends in <b id="timer">08 : 34 : 56</b></div></div>
+        <div class="product-row" id="dealProducts"></div>
+      </div>
+    </section>
+
+    <section class="section white" id="shop">
+      <div class="container">
+        <div class="section-heading"><div><small>CURATED COLLECTION</small><h2>Popular right now</h2></div><a href="#shop">View all →</a></div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="why section" id="why">
+      <div class="container">
+        <div class="section-heading"><div><small>THE BHAVISHMART PROMISE</small><h2>Why shop with us?</h2></div></div>
+        <div class="promise-grid">
+          <article><span>🏷️</span><h3>Good Prices</h3><p>We compare value before choosing what to list.</p></article>
+          <article><span>✓</span><h3>Quality Focus</h3><p>Useful products selected with quality in mind.</p></article>
+          <article><span>🚚</span><h3>Reliable Delivery</h3><p>Built for a simple, transparent order journey.</p></article>
+          <article><span>↩</span><h3>Easy Returns</h3><p>Clear policies designed around customers.</p></article>
+          <article><span>🔒</span><h3>Secure Checkout</h3><p>Payment gateways will be connected through a secure backend.</p></article>
+          <article><span>💬</span><h3>Customer Support</h3><p>Help when you need it, from shopping to delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seller section" id="seller">
+      <div class="container seller-inner">
+        <div><small>FOR BUSINESS OWNERS</small><h2>Sell on BHAVISHMART</h2><p>Manage products, inventory, orders and future multi-marketplace sales from one seller system.</p><button class="btn btn-primary" data-login="seller">Seller Login →</button></div>
+        <div class="seller-dashboard"><div class="dash-top"><b>Seller Dashboard</b><span>● Live</span></div><div class="dash-stats"><div><small>Sales</small><b>₹48,920</b></div><div><small>Orders</small><b>126</b></div><div><small>Stock</small><b>842</b></div></div><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      </div>
+    </section>
+
+    <section class="marketplaces section">
+      <div class="container"><small>MULTI-CHANNEL FUTURE</small><h2>One catalogue. Multiple marketplaces.</h2><p>Designed so BHAVISHMART can later connect its inventory and orders with Amazon, Flipkart, Myntra and other channels through approved APIs/integrations.</p><div class="marketplace-pills"><span>BHAVISHMART</span><span>Amazon</span><span>Flipkart</span><span>Myntra</span><span>Other marketplaces</span></div></div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><a class="brand footer-brand" href="#">BHAVISH<span class="brand-light">MART</span></a><p>Good Quality • Good Price</p></div><div><h4>Shop</h4><a href="#categories">Categories</a><a href="#deals">Deals</a><a href="#best">Best Sellers</a></div><div><h4>Help</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Privacy</a></div><div><h4>Business</h4><a href="#seller">Seller Login</a><a href="#">Partner with us</a><a href="mailto:support@bhavishmart.shop">support@bhavishmart.shop</a></div></div><div class="copyright">© 2026 BHAVISHMART • bhavishmart.shop</div></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cartDrawer"><div class="drawer-head"><h2>Your Cart</h2><button data-close>×</button></div><div id="cartItems"></div><div class="drawer-total"><span>Total</span><strong>₹<span id="cartTotal">0</span></strong></div><button class="btn btn-primary full" id="checkoutBtn">Secure Checkout</button></aside>
+
+  <div class="modal" id="loginModal">
+    <button class="modal-close" data-close>×</button>
+    <div class="login-switch"><button id="customerLoginTab" class="active">Customer</button><button id="sellerLoginTab">Seller</button></div>
+    <h2 id="loginTitle">Customer Login</h2>
+    <p id="loginDescription">Sign in to manage orders, wishlist and account details.</p>
+    <div id="customerAuthBox">
+      <div class="auth-mode"><button id="signInMode" class="active" type="button">Sign in</button><button id="signUpMode" type="button">Create account</button></div>
+      <input id="authName" placeholder="Full name" autocomplete="name" style="display:none">
+      <input id="authEmail" type="email" placeholder="Email address" autocomplete="email">
+      <input id="authPassword" type="password" placeholder="Password" autocomplete="current-password">
+      <input id="authPhone" type="tel" placeholder="Mobile number (optional)" autocomplete="tel" style="display:none">
+      <button class="btn btn-primary full" id="loginContinue">Sign in</button>
+      <button class="btn btn-secondary full" id="authLogout" type="button" style="display:none">Logout</button>
+      <small id="authStatus">Your account is secured by Supabase Authentication.</small>
+    </div>
+    <div id="sellerAuthBox" style="display:none">
+      <p>Seller authentication will be added after the customer account system is tested.</p>
+      <button class="btn btn-primary full" id="sellerContinue" type="button">Seller Login</button>
+    </div>
+  </div>
+
+  <div class="modal" id="paymentModal"><button class="modal-close" data-close>×</button><h2>Choose payment</h2><p>Select a method. Live processing will be connected securely through the backend.</p><div class="payment-grid"><button>UPI</button><button>Credit / Debit Card</button><button>Net Banking</button><button>Wallet</button><button>EMI</button><button>Cash on Delivery</button></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
